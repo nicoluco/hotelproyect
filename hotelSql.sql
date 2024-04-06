@@ -20,8 +20,6 @@
 --
 
 DROP TABLE IF EXISTS `cliente`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cliente` (
   `cliente_id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(10) DEFAULT NULL,
@@ -30,9 +28,7 @@ CREATE TABLE `cliente` (
   `telefono` int DEFAULT NULL,
   PRIMARY KEY (`cliente_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
 -- Table structure for table `habitacion`
 --
 
