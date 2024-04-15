@@ -210,7 +210,7 @@ DROP TABLE IF EXISTS `habitacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `habitacion` (
-  `h_id` int NOT NULL AUTO_INCREMENT,
+  `habitacion_id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
   `descripcion` varchar(50) DEFAULT NULL,
   `n_baños` int DEFAULT NULL,
@@ -218,7 +218,7 @@ CREATE TABLE `habitacion` (
   `disponibilidad` tinyint(1) DEFAULT NULL,
   `tarifa` int DEFAULT NULL,
   `hotel_id` int DEFAULT NULL,
-  PRIMARY KEY (`h_id`),
+  PRIMARY KEY (`habitacion_id`),
   KEY `habitacion_hotel_hotel_id_fk` (`hotel_id`),
   CONSTRAINT `habitacion_hotel_hotel_id_fk` FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`hotel_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -272,8 +272,8 @@ CREATE TABLE `reserva` (
   PRIMARY KEY (`id_reserva`),
   KEY `id_habitacion` (`id_habitacion`),
   KEY `cliente_id` (`cliente_id`),
-  CONSTRAINT `cliente_id` FOREIGN KEY (`cliente_id`) REFERENCES `usuario` (`cliente_id`),
-  CONSTRAINT `id_habitacion` FOREIGN KEY (`id_habitacion`) REFERENCES `habitacion` (`h_id`)
+  CONSTRAINT `cliente_id` FOREIGN KEY (`cliente_id`) REFERENCES `usuario` (`usuario_id`),
+  CONSTRAINT `id_habitacion` FOREIGN KEY (`id_habitacion`) REFERENCES `habitacion` (`habitacion_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -288,7 +288,7 @@ CREATE TABLE `rol` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='roles';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='roles';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,13 +299,13 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
-  `cliente_id` int NOT NULL AUTO_INCREMENT,
+  `usuario_id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(10) DEFAULT NULL,
   `appellido` varchar(10) DEFAULT NULL,
   `correo` varchar(25) DEFAULT NULL,
   `telefono` int DEFAULT NULL,
   `rol` int DEFAULT NULL,
-  PRIMARY KEY (`cliente_id`),
+  PRIMARY KEY (`usuario_id`),
   KEY `usuario_rol_id_fk` (`rol`),
   CONSTRAINT `usuario_rol_id_fk` FOREIGN KEY (`rol`) REFERENCES `rol` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -320,4 +320,4 @@ CREATE TABLE `usuario` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-15 18:55:52
+-- Dump completed on 2024-04-15 19:08:56
