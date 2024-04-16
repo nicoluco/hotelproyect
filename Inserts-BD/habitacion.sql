@@ -1,0 +1,4 @@
+INSERT INTO schema_hotel.habitacion (habitacion_id, nombre, descripcion, n_baños, metrosCuadrados, disponibilidad, tarifa, hotel_id) VALUES (1, 'H. individual', 'Habitacion para una persona', 1, '20m2', 1, 60000, 1);
+INSERT INTO schema_hotel.habitacion (habitacion_id, nombre, descripcion, n_baños, metrosCuadrados, disponibilidad, tarifa, hotel_id) VALUES (2, 'S. presidencial', 'Habitacion premium', 2, '45m2', 1, 200000, 1);
+INSERT INTO schema_hotel.habitacion (habitacion_id, nombre, descripcion, n_baños, metrosCuadrados, disponibilidad, tarifa, hotel_id) VALUES (3, 'H. doble', 'Habitacion para 2 personas', 2, '30m2', 1, 80000, 1);
+INSERT INTO schema_hotel.habitacion (habitacion_id, nombre, descripcion, n_baños, metrosCuadrados, disponibilidad, tarifa, hotel_id) VALUES (4, 'H. Resort', 'habitacion lujosa', 2, '45m2', 1, 120000, 1);
