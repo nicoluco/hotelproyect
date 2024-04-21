@@ -17,20 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from Proyecto_hotel import views
-from django.conf import settings
-from django.conf.urls.static import static
+from .views import index,pagina2
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('hotelapp/', include('hotelapp.urls')),
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('time',views.current_datetime),
-    # path('', RedirectView.as_view(url='/hotelapp/', permanent=True)),
+    path('', index,name='index'),
+    path('nombreejemplo2',pagina2,name='nombreredireccionpagina2') 
+    #path('sub url',view, name="nombre")  
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

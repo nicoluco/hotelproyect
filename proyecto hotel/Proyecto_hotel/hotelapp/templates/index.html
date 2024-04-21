@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+
+    {% for hotel in hoteles  %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card cajas">
+        <div class="card-body">
+          <h5 class="card-title"> {{hotel.nombre}} </h5>
+          <h5 class="card-title"> {{hotel.ubicacion}} </h5>
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+</body>
+</html>

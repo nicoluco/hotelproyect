@@ -213,7 +213,7 @@ CREATE TABLE `habitacion` (
   `habitacion_id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
   `descripcion` varchar(50) DEFAULT NULL,
-  `n_baños` int DEFAULT NULL,
+  `n_banos` int DEFAULT NULL,
   `metrosCuadrados` varchar(5) DEFAULT NULL,
   `disponibilidad` tinyint(1) DEFAULT NULL,
   `tarifa` int DEFAULT NULL,
